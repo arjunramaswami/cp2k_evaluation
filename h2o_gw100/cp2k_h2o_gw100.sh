@@ -15,9 +15,6 @@ for thread in {1..40}
 do
     echo "Running with number of threads : $thread"
     export OMP_NUM_THREADS=${thread}
-    srun --cpu-bind=verbose,cores --distribution=block:cyclic ../../cp2k_latest/exe/local/cp2k.ssmp -i ${appl} > data/${appl}_${thread}_${current_time}.out
+    #../../cp2k_latest/exe/local/cp2k.ssmp -i ${appl} > data/${appl}_${thread}_${current_time}.out
+    srun --cpu-bind=socket ../../cp2k_latest/exe/local/cp2k.ssmp -i ${appl} > data/${appl}_${thread}.out
 done
-
-#export OMP_NUM_THREADS=20
-#srun --cpu-bind=verbose,cores --distribution=block:block ../../cp2k_latest/exe/local/cp2k.ssmp -i ${appl} > data/${appl}_${current_time}_block.out
-#srun --cpu-bind=verbose,cores --distribution=block:cyclic ../../cp2k_latest/exe/local/cp2k.ssmp -i ${appl} > data/${appl}_${current_time}_cycle.out
