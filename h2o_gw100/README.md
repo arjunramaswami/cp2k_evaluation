@@ -1,14 +1,20 @@
 # Comparing Performances for H2O molecular CP2K runs with GW100 Method
 
-This repository contains 3 applications modified from the [GW100 application]{}.
+This repository contains 3 applications modified from the [GW100 application](https://www.cp2k.org/exercises:2017_uzh_cp2k-tutorial:gw).
 The applications have been modified the following way:
 
-- Within the MGRIDS subblock in the application, setting NGRIDS=1 and varying 
+- Within the `MGRIDS` subblock in the application, setting `NGRIDS=1` and varying 
 the cutoff gives specific FFT3d sizes. The cutoffs are mentioned below:
+
+| Cutoff | FFT3d Size |    Comments      |
+|:------:|:----------:|:----------------:|
+|   28   |     32     | Doesn't converge |
+|   100  |     64     |                  |
+|   450  |     128    |                  |
+|  1800  |     256    |   Not relevant   |
 
 
 ## Executing the application
-
 ### Requirements
 
 - `cp2k.ssmp` executable, which is one that can execute OpenMP 
@@ -19,7 +25,7 @@ The bash file can be used to execute on NOCTUA cluster :
 
 `sbatch cp2k_h2o_gw100.sh <application-name>`
 
-1. loads gcc/8.3.0
+1. loads `gcc/8.3.0`
 
 2. sets openmp thread affinity env variables
 
@@ -30,19 +36,33 @@ The bash file can be used to execute on NOCTUA cluster :
 
 Performance comparison on using multithreading for the entire CP2K execution:
 
+| Application| Runtime single (s) | Runtime Multi (s) | Speedup  |
+|:----------:|:------------------:|:-----------------:|:--------:|
+|     64     |     12.04          |           | |
+|     128    |    17.01           |           | |
 
 Performance comparison on using multithreading for only the FFT3d routine in 
 CP2K for different applications:
 
-Performance comparison between FPGA execution of FFT3d and the best multithreaded 
-FFT3d performance 
+| Application| Runtime single (s) | Runtime Multi (s) | Speedup  |
+|:----------:|:------------------:|:-----------------:|:--------:|
+|     64     |     12.04         |           | |
+|     128    |     17.01         |           | |
 
 Compare the FPGA execution of CP2K and the best multithreaded execution of CP2K:
 
-Speedup Obtained when using multithreading:
+| Application| Runtime best (s) | Runtime FPGA (s) | Speedup  |
+|:----------:|:----------------:|:----------------:|:--------:|
+|     64     |     12.04        |           | |
+|     128    |     17.01        |           | |
 
-Speedup obtained when using FPGA execution:
+Performance comparison between FPGA execution of FFT3d and the best multithreaded 
+FFT3d performance 
 
+| Application| Runtime best (s) | Runtime FPGA (s) | Speedup  |
+|:----------:|:----------------:|:----------------:|:--------:|
+|     64     |     12.04        |           | |
+|     128    |     17.01        |           | |
 
 ### Note
 
@@ -88,7 +108,4 @@ The following experiment data can be found for reference:
 
 2. cp2k output files to compare core and socket pinning for 20 and 40 threads
    for 64 FFT3d application in the directory `expm`.
-
-
-
 
