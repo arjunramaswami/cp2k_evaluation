@@ -38,43 +38,43 @@ Performance comparison on using multithreading for the entire CP2K execution:
 
 | Application| Runtime single (s) | Runtime Multi (s) | Speedup  |
 |:----------:|:------------------:|:-----------------:|:--------:|
-|     64     |     12.04          |           | |
-|     128    |    17.01           |           | |
+|     64     |     9.78           |    9.291          |    1.05  |
+|     128    |    83.64           |    23.93          |    3.49  |
 
 Performance comparison on using multithreading for only the FFT3d routine in 
 CP2K for different applications:
 
-| Application| Runtime single (s) | Runtime Multi (s) | Speedup  |
-|:----------:|:------------------:|:-----------------:|:--------:|
-|     64     |     12.04         |           | |
-|     128    |     17.01         |           | |
+| Application| # Calls | Runtime single (s) | Runtime Multi (s) | Speedup  |
+|:----------:|:-------:|:------------------:|:-----------------:|:--------:|
+|     64     |    128  |     0.95           |       0.11        |    8.5   |
+|     128    |    249  |     37.23          |       2.17        |   17.10  |
 
 Compare the FPGA execution of CP2K and the best multithreaded execution of CP2K:
 
-| Application| Runtime best (s) | Runtime FPGA (s) | Speedup  |
-|:----------:|:----------------:|:----------------:|:--------:|
-|     64     |     12.04        |           | |
-|     128    |     17.01        |           | |
+| Application| Runtime best (s) | Runtime FPGA (s) |
+|:----------:|:----------------:|:----------------:|
+|     64     |     9.291        |    11.22         |
+|     128    |     23.93        |                  |
 
 Performance comparison between FPGA execution of FFT3d and the best multithreaded 
-FFT3d performance 
+FFT3d:
 
-| Application| Runtime best (s) | Runtime FPGA (s) | Speedup  |
-|:----------:|:----------------:|:----------------:|:--------:|
-|     64     |     12.04        |           | |
-|     128    |     17.01        |           | |
+| Application| Runtime best (s) | Runtime FPGA (s) |
+|:----------:|:----------------:|:----------------:|
+|     64     |     0.11         |      0.295       |
+|     128    |     2.17         |                  |
+
 
 ### Note
 
 1. For 64 cube FFT application, using 20 threads pinned to cores showed better
-  performance than using 40 threads due to NUMA effects
+  performance than using 40 threads pinned to cores due to NUMA effects
 
-2. For any application, pinning threads to cores showed the same if not better
-  performance than pinning to sockets
-
-3. For 128 cube FFT application, using 40 threads showed better performance than
+2. For 128 cube FFT application, using 40 threads showed better performance than
   20 threads showing strong scaling effects outweighing the memory access
   latency
+  
+3. Core pinned = 0.115sec < socket pinned = 0.159sec, for 20 threads
 
 # Experiment Data and others
 
@@ -94,10 +94,6 @@ OMP_DISPLAY_ENV=TRUE
 OMP_PLACE=cores
 OMP_PROC_BIN=close
 ```
-
-### Performance 
-
-- core pinned = 0.115sec < socket pinned = 0.159sec, for 20 threads 
 
 ## Data
 
