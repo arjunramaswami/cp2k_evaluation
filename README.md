@@ -11,18 +11,12 @@ The list of the applications include:
 
 1. Fayalite molecule using Fist Method
 2. H2O molecule using the GW100 Method
-3. H2O molecule using the Cubic Scaling GW Method
-4. H2O molecule using the Periodic GW Method
 
 The applications found within the Fayalite and the GW100 Method  directories 
 have been modified to obtain specific FFT3d Sizes in order to compare amongst 
 the above mentioned configurations. The sizes are (in cubes)
 
-- 16
-- 32
-- 64
-- 128
-- 256
+- 16, 32, 64, 128, 256
 
 Each directory also contains the scripts and the data extracted from the
 execution.
