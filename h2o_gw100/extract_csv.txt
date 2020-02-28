@@ -1,0 +1,2 @@
+grep -ri "threads, runtime (s) " > ${outfile}
+grep -ri "fft3d_s" . | tr -s " " | sed -e "s/.\/h2o_gw100_100_64.inp_//g" | sed  -e "s/.out://g" | sed -e "s/ /,/g" | cut -d "," -f 1,8 | sed -e "s/.\/h2o_gw100_450_128.inp_//g" | sort -n >> ${outfile}
