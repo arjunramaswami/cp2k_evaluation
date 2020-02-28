@@ -1,0 +1,310 @@
+ DBCSR| CPU Multiplication driver                                           XSMM
+ DBCSR| Multrec recursion limit                                              512
+ DBCSR| Multiplication stack size                                           1000
+ DBCSR| Maximum elements for images                                    UNLIMITED
+ DBCSR| Multiplicative factor virtual images                                   1
+ DBCSR| Use multiplication densification                                       T
+ DBCSR| Multiplication size stacks                                             3
+
+
+  **** **** ******  **  PROGRAM STARTED AT               2020-02-24 15:41:20.500
+ ***** ** ***  *** **   PROGRAM STARTED ON                               cn-0252
+ **    ****   ******    PROGRAM STARTED BY                                arjunr
+ ***** **    ** ** **   PROGRAM PROCESS ID                                 67183
+  **** **  *******  **  PROGRAM STARTED IN /scratch/pc2-mitarbeiter/arjunr/cp2k_
+                                           application/Fist
+
+ CP2K| version string:                    CP2K version 7.0 (Development Version)
+ CP2K| source code revision number:                                  git:c0d078b
+ CP2K| cp2kflags: omp libint fftw3 libxc xsmm spglib                            
+ CP2K| is freely available from                            https://www.cp2k.org/
+ CP2K| Program compiled at                          Wed Nov 13 17:48:20 CET 2019
+ CP2K| Program compiled on                                               ln-0002
+ CP2K| Program compiled for                                                local
+ CP2K| Data directory path      /scratch/pc2-mitarbeiter/arjunr/cp2k_latest/data
+ CP2K| Input file name                              fayalite_tdk_benchmark64.inp
+
+ GLOBAL| Force Environment number                                              1
+ GLOBAL| Basis set file name                                           BASIS_SET
+ GLOBAL| Potential file name                                           POTENTIAL
+ GLOBAL| MM Potential file name                                     MM_POTENTIAL
+ GLOBAL| Coordinate file name                                      __STD_INPUT__
+ GLOBAL| Method name                                                        CP2K
+ GLOBAL| Project name                                         fayalite_pedone_md
+ GLOBAL| Preferred FFT library                                             FFTW3
+ GLOBAL| Preferred diagonalization lib.                                       SL
+ GLOBAL| Run type                                                             MD
+ GLOBAL| All-to-all communication in single precision                          F
+ GLOBAL| FFTs using library dependent lengths                                  F
+ GLOBAL| Global print level                                               SILENT
+ GLOBAL| MPI I/O enabled                                                       T
+ GLOBAL| Total number of message passing processes                             1
+ GLOBAL| Number of threads for this process                                   19
+ GLOBAL| This output is from process                                           0
+ GLOBAL| CPU model name                 Intel(R) Xeon(R) Gold 6148 CPU @ 2.40GHz
+ GLOBAL| CPUID                                                              1003
+ GLOBAL| Compiled for CPUID                                                    0
+ HINT in environment.F:814 The compiler target flags (generic) used to build
+   this binary cannot exploit all extensions of this CPU model (x86_avx512).
+   Consider compiler target flags as part of FCFLAGS and CFLAGS (ARCH file).
+
+ MEMORY| system memory details [Kb]
+ MEMORY|                        rank 0           min           max       average
+ MEMORY| MemTotal            196699340     196699340     196699340     196699340
+ MEMORY| MemFree             185576972     185576972     185576972     185576972
+ MEMORY| Buffers                     0             0             0             0
+ MEMORY| Cached                5540480       5540480       5540480       5540480
+ MEMORY| Slab                  2757848       2757848       2757848       2757848
+ MEMORY| SReclaimable           490512        490512        490512        490512
+ MEMORY| MemLikelyFree       191607964     191607964     191607964     191607964
+
+
+
+                      ************* ******** ***********   
+                     ************* **********************  
+                     ****     **** ****      ***********   
+                     ******** ****  *******     ****       
+                     *******  ****   *******   ****        
+                     ****     ****       ****  ****        
+                     ****     **** **********  ****        
+                      ****     **** ********    ****       
+                     FRONTIERS IN SIMULATION TECHNOLOGY    
+                                                           
+                        C.J. Mundy, S. Balasubramanian,    
+                     Ken Bagchi, J. Hutter, Ari Seitsonen  
+                      IFW Kuo, T. Laino, J. VandeVondele   
+                                 Version 1.0               
+
+                                                           
+
+
+ GENERATE|  Preliminary Number of Bonds generated:                             0
+ GENERATE|  Achieved consistency in connectivity generation.
+
+ FORCEFIELD| WARNING: A non Critical ForceField parameter is missing! CP2K GOES!
+ FORCEFIELD| Non critical parameters are:Urey-Bradley,Torsions,Impropers, Opbends and 1-4
+ FORCEFIELD| All missing parameters will not contribute to the potential energy!
+ FORCEFIELD| Activate the print key FF_INFO to have a list of missing parameters
+
+
+ FORCEFIELD| WARNING: A non Critical ForceField parameter is missing! CP2K GOES!
+ FORCEFIELD| Non critical parameters are:Urey-Bradley,Torsions,Impropers, Opbends and 1-4
+ FORCEFIELD| All missing parameters will not contribute to the potential energy!
+
+ FORCEFIELD| Missing Spline_Non_Bond_En(  FE,  FE)                              
+                                                                                
+                                                                                
+
+ FORCEFIELD| WARNING: Ignoring missing critical FF parameters! CP2K GOES!
+ FORCEFIELD| Critical parameters are: Bonds, Bends and Charges
+ FORCEFIELD| All missing parameters will not contribute to the potential energy!
+
+ -------------------------------------------------------------------------------
+ -                                                                             -
+ -                                DBCSR STATISTICS                             -
+ -                                                                             -
+ -------------------------------------------------------------------------------
+ COUNTER                                    TOTAL       BLAS       SMM       ACC
+ flops inhomo. stacks                           0       0.0%      0.0%      0.0%
+ flops total                         0.000000E+00       0.0%      0.0%      0.0%
+ flops max/rank                      0.000000E+00       0.0%      0.0%      0.0%
+ matmuls inhomo. stacks                         0       0.0%      0.0%      0.0%
+ matmuls total                                  0       0.0%      0.0%      0.0%
+ number of processed stacks                     0       0.0%      0.0%      0.0%
+ average stack size                                     0.0       0.0       0.0
+ marketing flops                     0.000000E+00
+ -------------------------------------------------------------------------------
+
+ MEMORY| Estimated peak process memory [MiB]                                 188
+
+ -------------------------------------------------------------------------------
+ -                                                                             -
+ -                           R E F E R E N C E S                               -
+ -                                                                             -
+ -------------------------------------------------------------------------------
+ 
+ CP2K version 7.0 (Development Version), the CP2K developers group (2018).
+ CP2K is freely available from https://www.cp2k.org/ .
+
+ Schuett, Ole; Messmer, Peter; Hutter, Juerg; VandeVondele, Joost. 
+ Electronic Structure Calculations on Graphics Processing Units, John Wiley & Sons, Ltd, 173-190 (2016). 
+ GPU-Accelerated Sparse Matrix-Matrix Multiplication for Linear Scaling Density Functional Theory.
+ https://dx.doi.org/10.1002/9781118670712.ch8
+
+
+ Borstnik, U; VandeVondele, J; Weber, V; Hutter, J. 
+ PARALLEL COMPUTING, 40 (5-6), 47-58 (2014). 
+ Sparse matrix multiplication: The distributed block-compressed sparse
+ row library.
+ https://dx.doi.org/10.1016/j.parco.2014.03.012
+
+
+ Hutter, J; Iannuzzi, M; Schiffmann, F; VandeVondele, J. 
+ WILEY INTERDISCIPLINARY REVIEWS-COMPUTATIONAL MOLECULAR SCIENCE, 4 (1), 15-25 (2014). 
+ CP2K: atomistic simulations of condensed matter systems.
+ https://dx.doi.org/10.1002/wcms.1159
+
+
+ Frigo, M; Johnson, SG. 
+ PROCEEDINGS OF THE IEEE, 93 (2), 216-231 (2005). 
+ The design and implementation of FFTW3.
+ https://dx.doi.org/10.1109/JPROC.2004.840301
+
+
+ ESSMANN, U; PERERA, L; BERKOWITZ, ML; DARDEN, T; LEE, H; PEDERSEN, LG. 
+ JOURNAL OF CHEMICAL PHYSICS, 103 (19), 8577-8593 (1995). 
+ A SMOOTH PARTICLE MESH EWALD METHOD.
+ https://dx.doi.org/10.1063/1.470117
+
+
+ -------------------------------------------------------------------------------
+ -                                                                             -
+ -                                T I M I N G                                  -
+ -                                                                             -
+ -------------------------------------------------------------------------------
+ SUBROUTINE                       CALLS  ASD         SELF TIME        TOTAL TIME
+                                MAXIMUM       AVERAGE  MAXIMUM  AVERAGE  MAXIMUM
+ CP2K                                 1  1.0    0.021    0.021   25.272   25.272
+ qs_mol_dyn_low                       1  2.0    0.008    0.008   25.054   25.054
+ fist_calc_energy_force              11  3.9    0.007    0.007   24.541   24.541
+ force_nonbond                       11  4.9   21.476   21.476   21.476   21.476
+ velocity_verlet                     10  3.0    0.033    0.033   21.433   21.433
+ list_control                        11  4.9    0.007    0.007    2.471    2.471
+ build_fist_neighbor_lists            2  6.5    0.000    0.000    2.469    2.469
+ build_neighbor_lists                 2  7.5    2.133    2.133    2.133    2.133
+ spme_evaluate                       11  4.9    0.462    0.462    0.529    0.529
+ md_output                           10  3.0    0.000    0.000    0.358    0.358
+ write_restart                       10  4.0    0.246    0.246    0.357    0.357
+ sort_neighbor_lists                  2  7.5    0.336    0.336    0.336    0.336
+ fist_create_force_env                1  2.0    0.000    0.000    0.192    0.192
+ fist_init                            1  3.0    0.000    0.000    0.192    0.192
+ update_input                         1  5.0    0.000    0.000    0.111    0.111
+ update_subsys                        1  6.0    0.000    0.000    0.111    0.111
+ section_coord_val_set                1  7.0    0.107    0.107    0.107    0.107
+ topology_control                     1  4.0    0.000    0.000    0.097    0.097
+ force_field_control                  1  4.0    0.000    0.000    0.082    0.082
+ restraint_control                   11  3.9    0.032    0.032    0.062    0.062
+ force_intra_control                 11  4.9    0.058    0.058    0.058    0.058
+ topology_connectivity_pack           1  5.0    0.000    0.000    0.057    0.057
+ pw_transfer                         99  6.5    0.002    0.002    0.045    0.045
+ force_field_pack                     1  5.0    0.000    0.000    0.043    0.043
+ fft_wrap_pw1pw2                     44  6.9    0.000    0.000    0.042    0.042
+ fft_wrap_pw1pw2_10                  44  7.9    0.003    0.003    0.042    0.042
+ fix_atom_control                    11  3.9    0.032    0.032    0.032    0.032
+ clean_intra_force_kind               1  5.0    0.032    0.032    0.032    0.032
+ create_local_fixd_list              11  4.9    0.030    0.030    0.030    0.030
+ fft3d_s                             45  8.8    0.028    0.028    0.029    0.029
+ topology_coordinate_pack             1  5.0    0.000    0.000    0.027    0.027
+ topology_coordinate_pack_89          1  6.0    0.015    0.015    0.015    0.015
+ fist_init_subsys                     1  4.0    0.000    0.000    0.013    0.013
+ setup_velocities                     1  3.0    0.000    0.000    0.013    0.013
+ initialize_velocities                1  4.0    0.013    0.013    0.013    0.013
+ pw_poisson_solve                    11  5.9    0.010    0.010    0.012    0.012
+ connectivity_control                 1  5.0    0.000    0.000    0.012    0.012
+ topology_connectivity_pack_2         1  6.0    0.010    0.010    0.010    0.010
+ rs_pw_transfer                      44  5.9    0.000    0.000    0.010    0.010
+ pw_scatter_s                        33  8.9    0.010    0.010    0.010    0.010
+ topology_connectivity_pack_14        1  6.0    0.009    0.009    0.009    0.009
+ distribute_molecules_1d              1  5.0    0.009    0.009    0.009    0.009
+ topology_coordinate_pack_11          1  6.0    0.007    0.007    0.007    0.007
+ force_field_qeff_output              1  5.0    0.007    0.007    0.007    0.007
+ topology_connectivity_pack_9         1  6.0    0.006    0.006    0.006    0.006
+ topology_generate_bond               1  6.0    0.000    0.000    0.006    0.006
+ rs_pw_transfer_PW2RS_10             33  6.9    0.006    0.006    0.006    0.006
+ topology_generate_bond_3             1  7.0    0.000    0.000    0.006    0.006
+ topology_connectivity_pack_4         1  6.0    0.005    0.005    0.005    0.005
+ remove_restart_info                  1  2.0    0.005    0.005    0.005    0.005
+ topology_connectivity_pack_10        1  6.0    0.005    0.005    0.005    0.005
+ topology_connectivity_pack_11        1  6.0    0.005    0.005    0.005    0.005
+ topology_connectivity_pack_12        1  6.0    0.005    0.005    0.005    0.005
+ topology_connectivity_pack_13        1  6.0    0.005    0.005    0.005    0.005
+ force_field_pack_opbend              1  6.0    0.004    0.004    0.004    0.004
+ topology_connectivity_pack_5         1  6.0    0.004    0.004    0.004    0.004
+ rs_pw_transfer_RS2PW_10             11  6.9    0.004    0.004    0.004    0.004
+ force_field_pack_impr                1  6.0    0.004    0.004    0.004    0.004
+ force_field_pack_bend                1  6.0    0.004    0.004    0.004    0.004
+ ewald_pw_init                        1  5.0    0.000    0.000    0.004    0.004
+ force_field_pack_ub                  1  6.0    0.004    0.004    0.004    0.004
+ pw_grid_setup                        1  6.0    0.000    0.000    0.004    0.004
+ pw_grid_setup_internal               1  7.0    0.001    0.001    0.004    0.004
+ force_field_pack_tors                1  6.0    0.003    0.003    0.003    0.003
+ section_velocity_val_set             1  7.0    0.003    0.003    0.003    0.003
+ force_field_pack_bond                1  6.0    0.003    0.003    0.003    0.003
+ topology_generate_molecule           1  6.0    0.003    0.003    0.003    0.003
+ force_field_pack_splines             2  6.0    0.000    0.000    0.003    0.003
+ force_field_unique_bend              1  6.0    0.003    0.003    0.003    0.003
+ force_field_unique_ub                1  6.0    0.003    0.003    0.003    0.003
+ force_field_unique_impr              1  6.0    0.003    0.003    0.003    0.003
+ topology_coordinate_pack_1           1  6.0    0.003    0.003    0.003    0.003
+ rot_ana                              1  3.0    0.003    0.003    0.003    0.003
+ force_field_unique_bond              1  6.0    0.003    0.003    0.003    0.003
+ force_field_unique_opbend            1  6.0    0.003    0.003    0.003    0.003
+ force_field_unique_tors              1  6.0    0.003    0.003    0.003    0.003
+ topology_connectivity_pack_6         1  6.0    0.003    0.003    0.003    0.003
+ update_particle_set                 20  4.0    0.003    0.003    0.003    0.003
+ spline_nonbond_control               2  7.0    0.002    0.002    0.002    0.002
+ pw_grid_sort                         1  8.0    0.001    0.001    0.002    0.002
+ topology_molecules_check             1  6.0    0.002    0.002    0.002    0.002
+ pw_copy                             88  7.5    0.001    0.001    0.001    0.001
+ topology_coordinate_pack_3           1  6.0    0.001    0.001    0.001    0.001
+ sort_shells                          1  9.0    0.001    0.001    0.001    0.001
+ external_control                    10  3.0    0.001    0.001    0.001    0.001
+ md_write_output                     11  3.9    0.000    0.000    0.001    0.001
+ init_genpot                          7  8.7    0.001    0.001    0.001    0.001
+ pw_grid_assign                       1  8.0    0.001    0.001    0.001    0.001
+ get_fft_scratch                     45  9.8    0.001    0.001    0.001    0.001
+ get_nonbond_storage                  2  7.0    0.000    0.000    0.001    0.001
+ set_potparm_index                    5  8.0    0.000    0.000    0.001    0.001
+ topology_muc                         1  6.0    0.001    0.001    0.001    0.001
+ rs_grid_zero                        11  5.9    0.001    0.001    0.001    0.001
+ pw_poisson_rebuild                  22  6.4    0.001    0.001    0.001    0.001
+ pw_derive                           33  6.9    0.001    0.001    0.001    0.001
+ write_trajectory                    44  4.9    0.001    0.001    0.001    0.001
+ topology_connectivity_pack_7         1  6.0    0.000    0.000    0.000    0.000
+ topology_connectivity_pack_3         1  6.0    0.000    0.000    0.000    0.000
+ topology_constraint_pack             1  5.0    0.000    0.000    0.000    0.000
+ pw_gather_s                         11  8.9    0.000    0.000    0.000    0.000
+ topology_constraint_pack_1           1  6.0    0.000    0.000    0.000    0.000
+ topology_connectivity_pack_8         1  6.0    0.000    0.000    0.000    0.000
+ topology_coordinate_pack_7a          1  6.0    0.000    0.000    0.000    0.000
+ topology_generate_bond_4             1  7.0    0.000    0.000    0.000    0.000
+ topology_coordinate_pack_7b          1  6.0    0.000    0.000    0.000    0.000
+ diamat_all                           1  4.0    0.000    0.000    0.000    0.000
+ coordinate_control                   1  5.0    0.000    0.000    0.000    0.000
+ write_structure_data                12  4.9    0.000    0.000    0.000    0.000
+ coordinate_control_READ_COORDI       1  6.0    0.000    0.000    0.000    0.000
+ read_atoms_input                     1  7.0    0.000    0.000    0.000    0.000
+ topology_coordinate_pack_5           1  6.0    0.000    0.000    0.000    0.000
+ topology_generate_molecule_PAR       1  7.0    0.000    0.000    0.000    0.000
+ rs_grid_create                      45  5.9    0.000    0.000    0.000    0.000
+ temperature_control                 10  3.0    0.000    0.000    0.000    0.000
+ pw_pool_create_pw                  112  6.3    0.000    0.000    0.000    0.000
+ topology_connectivity_pack_1         1  6.0    0.000    0.000    0.000    0.000
+ topology_coordinate_pack_6           1  6.0    0.000    0.000    0.000    0.000
+ mp_sum_d                           375  1.6    0.000    0.000    0.000    0.000
+ mp_maxloc_dv                       451  1.0    0.000    0.000    0.000    0.000
+ force_field_pack_nonbond14           1  6.0    0.000    0.000    0.000    0.000
+ comvel_control                      10  3.0    0.000    0.000    0.000    0.000
+ pw_pool_give_back_pw               110  6.3    0.000    0.000    0.000    0.000
+ force_nonbond_manybody              11  4.9    0.000    0.000    0.000    0.000
+ bonded_correct_gaussian             11  4.9    0.000    0.000    0.000    0.000
+ compute_averages                    10  5.0    0.000    0.000    0.000    0.000
+ connectivity_control_check_ele       1  6.0    0.000    0.000    0.000    0.000
+ mp_max_i                           354  1.6    0.000    0.000    0.000    0.000
+ add_external_potential              11  3.9    0.000    0.000    0.000    0.000
+ update_motion                        1  6.0    0.000    0.000    0.000    0.000
+ force_field_pack_nonbond             1  6.0    0.000    0.000    0.000    0.000
+ -------------------------------------------------------------------------------
+
+    Writing callgraph to: fayalite_pedone_md.callgraph
+
+ -------------------------------------------------------------------------------
+ The number of warnings for this run is : 0
+ 
+ -------------------------------------------------------------------------------
+  **** **** ******  **  PROGRAM ENDED AT                 2020-02-24 15:41:45.839
+ ***** ** ***  *** **   PROGRAM RAN ON                                   cn-0252
+ **    ****   ******    PROGRAM RAN BY                                    arjunr
+ ***** **    ** ** **   PROGRAM PROCESS ID                                 67183
+  **** **  *******  **  PROGRAM STOPPED IN /scratch/pc2-mitarbeiter/arjunr/cp2k_
+                                           application/Fist
