@@ -2,8 +2,9 @@
 #SBATCH -A pc2-mitarbeiter
 #SBATCH -J h2o_gw100
 #SBATCH -p short 
-#SBATCH -N 1
+#SBATCH -N 2
 #SBATCH -t 29:00
+#SBATCH --ntasks-per-node=1
 
 ## Execute cp2k multithreaded code 
 ##   Arg : application file
@@ -18,7 +19,8 @@ module load numlib/FFTW/3.3.8-gompi-2019b
 appl=$1
 ctime=$(date "+%Y.%m.%d-%H.%M")
 echo "Application ${appl}"
-outfile="data/estimate/${appl}"
+outfile="test/${appl}"
+#outfile="data/estimate/${appl}"
 
 ## Set OMP Environment Variables
 
@@ -32,7 +34,8 @@ export OMP_PROC_BIND=close
 for thread in {1..40}
 do
     echo "Running application ${appl} with number of threads : $thread"
-    OMP_NUM_THREADS=${thread} ../../cp2k_latest/exe/local/cp2k.ssmp -i ${appl} >> ${outfile}_${thread}.out
+    OMP_NUM_THREADS=${thread} ../../cp2k_latest/exe/local/cp2k.psmp -i ${appl} >> ${outfile}_${thread}.out
+    #OMP_NUM_THREADS=${thread} ../../cp2k_latest/exe/local/cp2k.ssmp -i ${appl} >> ${outfile}_${thread}.out
     #../../cp2k_latest/exe/local/cp2k.ssmp -i ${appl} > data/${appl}_${thread}_${current_time}.out
     #srun --cpu-bind=socket ../../cp2k_latest/exe/local/cp2k.ssmp -i ${appl} > data/${appl}_${thread}.out
 done

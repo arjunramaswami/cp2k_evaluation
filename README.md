@@ -19,8 +19,10 @@ Clone of CP2K commit `c0d078b`.
 
 ```bash
 module load toolchain/gompi/2019b numlib/FFTW/3.3.8-gompi-2019b
+module load numlib/ScaLAPACK/
 
 ./install_cp2k_toolchain.sh --with-fftw=system --mpi-mode=no --enable-omp=yes
+./install_cp2k_toolchain.sh --with-fftw=system --with-scalapack=system --with-elpa=no --with-sirius=no
 ```
 
 Rebuilding requires sourcing the setup file as shown below:
@@ -35,6 +37,7 @@ Make sure all the regression tests pass after every build stage:
 
 ```bash
 make -j 40 ARCH=local VERSION="sdbg sopt ssmp" test
+make -j 20 ARCH=local VERSION="sopt sdbg ssmp popt pdbg psmp" test
 ```
 
 - Separate application: `do_regtest`

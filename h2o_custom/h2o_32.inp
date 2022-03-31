@@ -1,0 +1,50 @@
+&GLOBAL
+  PROJECT H2O-FFT
+  RUN_TYPE ENERGY
+  PRINT_LEVEL LOW
+  ALLTOALL_SGL FALSE
+  PREFERRED_FFT_LIBRARY FFTW3
+  EXTENDED_FFT_LENGTHS FALSE
+&END GLOBAL
+&FORCE_EVAL
+  METHOD QS
+  &DFT
+    BASIS_SET_FILE_NAME BASIS_SET
+    POTENTIAL_FILE_NAME POTENTIAL
+    &MGRID
+      CUTOFF 100    # Determines the numer of FFT grid points per volume
+      REL_CUTOFF 50
+      NGRIDS 1    # Number of FFT grids, if larger 1 then multigrid
+    &END MGRID
+    &QS
+      METHOD GPW
+      EPS_DEFAULT 1.0E-10
+    &END QS
+    &SCF
+      SCF_GUESS ATOMIC
+      MAX_SCF 1
+    &END SCF
+    &XC
+      &XC_FUNCTIONAL Pade    # Pade = LDA, PBE = GGA on FFT grid
+      &END XC_FUNCTIONAL
+    &END XC
+  &END DFT
+  &SUBSYS
+    &CELL
+      ABC 5.0 5.0 5.0    # Larger Volume means more FFT grid points
+    &END CELL
+    &COORD
+    O   0.000000    0.000000   -0.065587
+    H   0.000000   -0.757136    0.520545
+    H   0.000000    0.757136    0.520545
+    &END COORD
+    &KIND H
+      BASIS_SET DZVP-GTH-PADE  # DZVP-GTH-PBE
+      POTENTIAL GTH-PADE-q1    # GTH-PBE-q1
+    &END KIND
+    &KIND O
+      BASIS_SET DZVP-GTH-PADE  # DZVP-GTH-PBE
+      POTENTIAL GTH-PADE-q6    # GTH-PBE-q6
+    &END KIND
+  &END SUBSYS
+&END FORCE_EVAL
